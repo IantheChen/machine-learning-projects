@@ -32,16 +32,6 @@ data.loc[1,['User_ID','Product_Category_2']]
 data[['User_ID','Product_Category_2']].head()
 df1 = data.drop(['Unnamed: 0', 'User_ID','Product_Category_2', 'Product_Category_3'],axis=1)
 
-# =============================================================================
-# df1['Product_Category_1'].corr(df1['Age'])
-# df1['Product_Category_1'].corr(df1['Gender'])
-# df1['Product_Category_1'].corr(df1['Occupation'])
-# df1['Product_Category_1'].corr(df1['City_Category'])
-# df1['Product_Category_1'].corr(df1['Stay_In_Current_City_Years'])
-# df1['Product_Category_1'].corr(df1['Marital_Status'])
-# df1['Product_Category_1'].corr(df1['Purchase'])
-# df1['Product_Category_1'].corr(df1['User_ID'])
-# =============================================================================
 
 #Preprocessing
 df_group = data.groupby(by='Product_ID', as_index=False).agg({'User_ID': pd.Series.nunique})
@@ -66,19 +56,6 @@ df1 = pd.get_dummies(data=df1, columns=['Gender','Age','Occupation',
  'Marital_Status'] )
 
 
-#Split train and test data set
-# Train Dataset
-df_train = df1[df1.Product_Category_1 != -1]
-df_train = df_train.drop(['Product_ID'],axis=1)
-y = df_train['Product_Category_1']
-X = df_train.drop('Product_Category_1', axis=1)
-# Test Dataset
-df_test = df1[df1.Product_Category_1 == -1] # Not to be touched until the model is trained and ready
-Product_ID_test = df_test['Product_ID']
-df_test = df_test.drop(['Product_ID'],axis=1)
-df_test = df_test.drop('Product_Category_1', axis=1)
-
-
 # Data Exploration
 #find correlation
 corr = df_train.corr()
@@ -94,6 +71,17 @@ ax.set_xticklabels(df_train.columns)
 ax.set_yticklabels(df_train.columns)
 plt.show()
 
+#Split train and test data set
+# Train Dataset
+df_train = df1[df1.Product_Category_1 != -1]
+df_train = df_train.drop(['Product_ID'],axis=1)
+y = df_train['Product_Category_1']
+X = df_train.drop('Product_Category_1', axis=1)
+# Test Dataset
+df_test = df1[df1.Product_Category_1 == -1] # Not to be touched until the model is trained and ready
+Product_ID_test = df_test['Product_ID']
+df_test = df_test.drop(['Product_ID'],axis=1)
+df_test = df_test.drop('Product_Category_1', axis=1)
 
 # Split Train Dataset into Traning and Testing
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
