@@ -1,4 +1,6 @@
-# 242-Project_Movie-Recommendation-System
+# Machine Learning
+# Regression
+# Movie-Recommendation-System
 
 1-movie_metadata2:
   1. R code converting json files(genres) into csv files, and then do some exploratory data analytics and data cleaning on movie features.
