@@ -1,0 +1,20 @@
+# Machine Learning
+# Classification
+# Black-Friday-Product-Category
+Apply classification algorithms to predict category of products
+
+## 1. Data Set:
+- file: black_friday_data_kaggle_sample
+- features: User_ID, Product_ID, Gender, Age, Occupation, City_Category, Stay_In_Current_City_Years, Marital_Status, Product_Category_1, Product_Category_2, Product_Category_3, Purchase
+- examples: over 5 million rows
+- goal: predict "Product_Category_1" 
+
+## 2.Code:
+- file: lab5_black_friday.py
+- Machine Learning Algorithms: Neural Network, Decision Tree, Random Forest, Stacking, XGBoosting, etc
+
+## 3.Submission:
+- file: submission_file.csv
+- accuracy: 91%
+
+
