@@ -18,3 +18,12 @@
   1. R code to train several models like cf/rf by cross validation.
   2. R code to ensemble several models.
   3. R code to recommendation movies to users.
+
+# Data Sources
+Because the raw datasets are too large to upload, we here offer the orignal data sources below:
+
+- Movies rating data sets and users features data like age, gender etc. from the MovieLens web site
+(https://grouplens.org/datasets/movielens/)
+
+- Information on aspects such as popularity, budget, revenue, cast, directors, production house, date of release, runtime for around 10000 movies from TMDb Movie dataset
+(https://www.themoviedb.org/documentation/api)
